@@ -1,7 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState} from "react";
 import Modals from './components/Modals';
+import defaultPokemon from './img/default.jpg'
 function App() {
   const [counter,setCounter]=useState(0);
   const [pokemon,setPokemon]=useState({});
@@ -50,7 +50,8 @@ setCounter(id);
       
         <p>
          <div className="flex-container">
-          <img src={pokemon?.sprites?.back_default} className="poke-image"/>
+          
+          <img src={pokemon?.sprites?.back_default??defaultPokemon} className="poke-image"/>
           <img src={pokemon?.sprites?.front_default} className="poke-image"/>
          </div>
          <p>{pokemon.name??"No se ha seleccionado Pokemon"}</p>
@@ -58,7 +59,7 @@ setCounter(id);
            <button  className="button" onClick={prev}>Anterior</button>         
            <button className="button" onClick={()=>fetchPokemon(getRandomInt())}>Random</button>    
            <button className="button" onClick={next}>Siguiente</button>
-           <Modals poke={pokemon}/>    
+           {counter>0 ?  <Modals poke={pokemon}/>:<h1 className="none">.</h1>}    
          </div>
         
         </p>

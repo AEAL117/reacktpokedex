@@ -7,7 +7,7 @@ const Modals=({poke})=>{
     
     return(
         <div>
-            <h2>Capacidad</h2>
+            <h2>Habilidades</h2>
          <button className="button" onClick={openModal1}>Abrir</button>   
          <Modal isOpen={isOpenModal1} closeModal={closeModal1}>
              <h3>{poke.name}</h3>
