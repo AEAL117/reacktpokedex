@@ -7,12 +7,12 @@ const Modals=({poke})=>{
     
     return(
         <div>
-            <h2>Habilidades</h2>
-         <button className="button" onClick={openModal1}>Modal 1</button>   
+            <h2>Capacidad</h2>
+         <button className="button" onClick={openModal1}>Abrir</button>   
          <Modal isOpen={isOpenModal1} closeModal={closeModal1}>
              <h3>{poke.name}</h3>
-             <p>Hola este es el contenido de mi modal 1</p>
-             <img src="https://placeimg.com/400/400/animals" alt="Animals"/>
+             <h4>{poke?.abilities?.map(a => <div>{a.ability.name}</div>)}</h4>
+             <img src={poke?.sprites?.front_default} className="poke-image"/>
          </Modal>
         </div>
     );

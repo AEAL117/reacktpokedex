@@ -6,7 +6,8 @@ function App() {
   const [counter,setCounter]=useState(0);
   const [pokemon,setPokemon]=useState({});
   useEffect(()=> {
-
+    console.log({pokemon});
+    console.log(counter);
     
     
   },[pokemon,counter]);
