@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState} from "react";
+import Modals from './components/Modals';
 function App() {
   const [counter,setCounter]=useState(0);
   const [pokemon,setPokemon]=useState({});
@@ -49,7 +50,7 @@ setCounter(id);
   return (
     <div className="App">
       <header className="App-header">
-       
+      <Modals/>
         <p>
          <div className="flex-container">
           <img src={pokemon?.sprites?.back_default} className="poke-image"/>
