@@ -29,6 +29,15 @@
     position: absolute;
     top: 1rem;
     right:1rem;
+    background-color: #da0c0c;
+    color: white;
+    cursor: pointer;
+    width: 10vm;
+    height: 5vh;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 5px;
 }
 
 .button{

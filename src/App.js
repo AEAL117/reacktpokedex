@@ -6,8 +6,7 @@ function App() {
   const [counter,setCounter]=useState(0);
   const [pokemon,setPokemon]=useState({});
   useEffect(()=> {
-    console.log({pokemon});
-    console.log(counter);
+
     
     
   },[pokemon,counter]);
@@ -44,13 +43,10 @@ setCounter(id);
    }
    
   };
- const showHabilities=()=>{
-
- };
   return (
     <div className="App">
       <header className="App-header">
-      <Modals/>
+      
         <p>
          <div className="flex-container">
           <img src={pokemon?.sprites?.back_default} className="poke-image"/>
@@ -61,7 +57,7 @@ setCounter(id);
            <button  className="button" onClick={prev}>Anterior</button>         
            <button className="button" onClick={()=>fetchPokemon(getRandomInt())}>Random</button>    
            <button className="button" onClick={next}>Siguiente</button>
-           <button className="button" onClick={showHabilities}>Habilidades</button>    
+           <Modals poke={pokemon}/>    
          </div>
         
         </p>
