@@ -52,7 +52,7 @@ setCounter(id);
         <p>
          <div className="pokedex-screen">
           <img src={pokemon?.sprites?.back_default??defaultPokemon} className="poke-image" alt='Pokemon front'/>
-          <img src={pokemon?.sprites?.front_default} className="poke-image" alt='Pokemon back'/>
+          <img src={pokemon?.sprites?.front_default??defaultPokemon} className="poke-image" alt='Pokemon back'/>
          </div>
          <h3 className='titulo'>ID</h3>
          <p>{pokemon.id}</p>
