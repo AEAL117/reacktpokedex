@@ -51,8 +51,8 @@ setCounter(id);
       <div className="pokedex">
         <p>
          <div className="pokedex-screen">
-          <img src={pokemon?.sprites?.back_default??defaultPokemon} className="poke-image"/>
-          <img src={pokemon?.sprites?.front_default} className="poke-image"/>
+          <img src={pokemon?.sprites?.back_default??defaultPokemon} className="poke-image" alt='Pokemon front'/>
+          <img src={pokemon?.sprites?.front_default} className="poke-image" alt='Pokemon back'/>
          </div>
          <h3 className='titulo'>ID</h3>
          <p>{pokemon.id}</p>
@@ -62,7 +62,7 @@ setCounter(id);
            <button  className="button" onClick={prev}>Anterior</button>         
            <button className="button" onClick={()=>fetchPokemon(getRandomInt())}>Random</button>    
            <button className="button" onClick={next}>Siguiente</button>
-           {counter>0 ?  <Modals poke={pokemon}/>:<h1 className="none"></h1>}    
+           {counter>0 ?  <Modals poke={pokemon}/>:<h1 className="none">.</h1>}    
          </div>
         
         </p>

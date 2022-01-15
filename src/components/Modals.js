@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useModal } from "../hooks/useModal";
 import Modal from "./Modal";
 import "./Modal.css";
@@ -12,7 +11,7 @@ const Modals=({poke})=>{
          <Modal isOpen={isOpenModal1} closeModal={closeModal1}>
              <h3>{poke.name}</h3>
              <p>{poke?.abilities?.map(a => <div>{a.ability.name}</div>)}</p>
-             <img src={poke?.sprites?.front_default} className="poke-image"/>
+             <img src={poke?.sprites?.front_default} className="poke-image" alt='Pokemon front'/>
          </Modal>
         </div>
     );

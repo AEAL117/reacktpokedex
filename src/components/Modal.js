@@ -1,4 +1,3 @@
-import { Children } from "react/cjs/react.production.min";
 import "./Modal.css";
 const Modal=({children,isOpen,closeModal})=>{
 
