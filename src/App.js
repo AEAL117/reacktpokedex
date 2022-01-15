@@ -47,22 +47,27 @@ setCounter(id);
   return (
     <div className="App">
       <header className="App-header">
-      
+        <a className='App-link' href='https://github.com/AEAL117/reacktpokedex'>GitHub</a>
+      <div className="pokedex">
         <p>
-         <div className="flex-container">
-          
+         <div className="pokedex-screen">
           <img src={pokemon?.sprites?.back_default??defaultPokemon} className="poke-image"/>
           <img src={pokemon?.sprites?.front_default} className="poke-image"/>
          </div>
+         <h3 className='titulo'>ID</h3>
+         <p>{pokemon.id}</p>
+         <h3 className='titulo'>Nombre</h3>
          <p>{pokemon.name??"No se ha seleccionado Pokemon"}</p>
          <div className="flax-container">
            <button  className="button" onClick={prev}>Anterior</button>         
            <button className="button" onClick={()=>fetchPokemon(getRandomInt())}>Random</button>    
            <button className="button" onClick={next}>Siguiente</button>
-           {counter>0 ?  <Modals poke={pokemon}/>:<h1 className="none">.</h1>}    
+           {counter>0 ?  <Modals poke={pokemon}/>:<h1 className="none"></h1>}    
          </div>
         
         </p>
+      </div>
+
       </header>
     </div>
   );
