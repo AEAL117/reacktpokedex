@@ -12,6 +12,12 @@ function App() {
     
     
   },[pokemon,counter]);
+
+
+const pokeByName=()=>{
+  fetchPokemon(inputRef.current.value);
+};
+
 const fetchPokemon =(id)=>{
 fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
 .then((response)=> response.json())
@@ -75,8 +81,11 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
            <button className="button" onClick={()=>fetchPokemon(getRandomInt())}>Random</button>    
            <button className="button" onClick={next}>Siguiente</button>
            <h3 className='titulo'>Búsqueda por nombre</h3>
-        <input type="text" onChange={(event) => fetchPokemon(event.target.value)}></input> 
-        
+          <input type="text" onChange={(event) => fetchPokemon(event.target.value)}></input> 
+
+           <h3 className='titulo'>Búsqueda por ID</h3>
+           <input type="text" ref={inputRef}></input> 
+           <button  className="button" onClick={pokeByName}>Buscar</button>
         {pokemon!=null ?  <Modals poke={pokemon}/>:<h1 className="none">.</h1>}   
          </div>
         
