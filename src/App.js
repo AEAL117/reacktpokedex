@@ -15,7 +15,13 @@ function App() {
 
 
 const pokeByName=()=>{
-  fetchPokemon(inputRef.current.value);
+  if(Number.isInteger(inputRef.current.value)){
+    console.log("Valor de busqueda por ID"+inputRef.current.value);
+    fetchPokemon(inputRef.current.value);
+  }else{
+    alert("Solo se aceptan numeros")
+  }
+
 };
 
 const fetchPokemon =(id)=>{
@@ -86,7 +92,8 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
            <h3 className='titulo'>Búsqueda por ID</h3>
            <input type="text" ref={inputRef}></input> 
            <button  className="button" onClick={pokeByName}>Buscar</button>
-        {pokemon!=null ?  <Modals poke={pokemon}/>:<h1 className="none">.</h1>}   
+        {counter!=0 ?  <Modals poke={pokemon}/>:<h1 className="none">.</h1>}   
+        
          </div>
         
         </p>
