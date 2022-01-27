@@ -92,7 +92,7 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
            <h3 className='titulo'>Búsqueda por ID</h3>
            <input type="text" ref={inputRef}></input> 
            <button  className="button" onClick={pokeByName}>Buscar</button>
-        {counter!=0 || inputRef.current!=null ?  <Modals poke={pokemon}/>:<h1 className="none">.</h1>}   
+        {counter!=0 || inputRef.current!==null ?  <Modals poke={pokemon}/>:<h1 className="none">.</h1>}   
         
          </div>
         
