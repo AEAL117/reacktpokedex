@@ -5,7 +5,7 @@ import defaultPokemon from './img/default.jpg'
 function App() {
   const [counter,setCounter]=useState(0);
   const [pokemon,setPokemon]=useState({});
-  const inputRef=useRef();
+  const inputRef=useRef(null);
   useEffect(()=> {
     console.log({pokemon});
     console.log(counter);
@@ -15,11 +15,11 @@ function App() {
 
 
 const pokeByName=()=>{
-  if(Number.isInteger(inputRef.current.value)){
-    console.log("Valor de busqueda por ID"+inputRef.current.value);
-    fetchPokemon(inputRef.current.value);
+  if(Number.isInteger(+inputRef.current.value)){
+    console.log("Valor de busqueda por ID"+ inputRef.current.value);
+    fetchPokemon(+inputRef.current.value);
   }else{
-    alert("Solo se aceptan numeros")
+    alert("Solo se aceptan numeros "+inputRef.current.value)
   }
 
 };
@@ -92,7 +92,7 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
            <h3 className='titulo'>Búsqueda por ID</h3>
            <input type="text" ref={inputRef}></input> 
            <button  className="button" onClick={pokeByName}>Buscar</button>
-        {counter!=0 ?  <Modals poke={pokemon}/>:<h1 className="none">.</h1>}   
+        {counter!=0 || inputRef.current!=null ?  <Modals poke={pokemon}/>:<h1 className="none">.</h1>}   
         
          </div>
         
